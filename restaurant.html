@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="theme-color" content="#252831">
+    <!-- Normalize.css for better cross-browser consistency -->
+    <link rel="stylesheet" src="//normalize-css.googlecode.com/svn/trunk/normalize.css">
+    <!-- Main CSS file -->
+    <link rel="stylesheet" href="css/styles.css" type="text/css">
+    <link rel="icon" href="favicon.ico">
+    <link rel="manifest" href="/manifest.webmanifest">
+    <title>Restaurant Info</title>
+</head>
+
+<body class="inside">
+    <!-- Beginning header -->
+    <header>
+        <!-- Beginning nav -->
+        <nav>
+            <h1>
+                <a href="/" tabindex="0" role="link">Restaurant Reviews</a>
+            </h1>
+        </nav>
+        <!-- Beginning breadcrumb -->
+        <nav class="breadcrumb" role="navigation" tabindex="0" aria-label="Breadcrumb">
+            <ul id="breadcrumb" role="navigation" tabindex="0">
+                <li>
+                    <span id="icon-arrow" aria-hidden="true">▶</span>
+                    <a href="/" tabindex="0" role="link">Home</a>
+                </li>
+            </ul>
+        </nav>
+        <!-- End breadcrumb -->
+        <!-- End nav -->
+    </header>
+    <!-- End header -->
+
+    <!-- Beginning main -->
+    <main id="maincontent" role="main">
+        <!--<section id="static-map-container"></section>-->
+        <!-- <section>
+            <img id="static-map-container" src="https://maps.googleapis.com/maps/api/staticmap?center=33.29939,-84.55608&zoom=14&size=500x300&format=jpg&maptype=roadmap
+          &markers=color:red%7Clabel:S%7C33.29939,-84.55608&key=AIzaSyAsggoUe5zy3jLXhAo-kYQ8xmgpTi377Ec"></img>
+            <h2>This is a Static Map</h2>
+        </section>-->
+        <!-- Beginning map -->
+        <section id="map-container" tabindex="0" role="application" aria-label="restaurant map">
+            <div id="map" tabindex="0" role="application" aria-label="image of map" lang="en"></div>
+        </section>
+        <!-- End map -->
+        <!-- Beginning restaurant -->
+        <section id="restaurant-container" role="region" tabindex="0" aria-label="restaurant details">
+            <h2 id="restaurant-name" role="heading" tabindex="0"></h2>
+            <!--<picture id="restaurant-img"></picture>-->
+            <picture id="restaurant-img" role="img" tabindex="0" aria-label="restaurant" alt="restaurant"></picture>
+            <p id="restaurant-cuisine" role="heading" tabindex="0"></p>
+            <p id="restaurant-address" role="presentation" tabindex="0"></p>
+            <table id="restaurant-hours" role="presentation" tabindex="0"></table>
+            <!--<button id="restaurant-on-map" class="button"  role="navigation "tabindex="0">Show on map</button>-->
+            <!-- Beginning map
+      <section id="map-container">
+        <div id="map" tabindex="0" aria-label="location" role="application"></div>
+      </section>
+      End map -->
+        </section>
+        <!-- end restaurant -->
+
+        <!-- Beginning review form -->
+        <section id="review-form-container">
+            <h3>Leave a review:</h3>
+            <form id="review-form" method="post" action="#">
+                <div class="review-form-wrapper">
+                    <label for="review-name">Name:</label>
+                    <input type="text" id="review-name" aria-label="Name" aria-required="true" required>
+
+                    <label for="review-text">Review:</label>
+                    <textarea type="textarea" id="review-text" aria-label="Review text" rows="4" aria-required="true" required></textarea>
+
+                    <p>Rating:</p>
+                    <div class="review-form-radio-wrapper">
+                        <label for="rating5" tabindex="0" aria-label="Rating 5 out of 5">
+                            <input type="radio" id="rating5" name="rating" value="5"> ☆☆☆☆☆
+                        </label>
+
+                        <label for="rating4" tabindex="0" aria-label="Rating 4 out of 5">
+                            <input type="radio" id="rating4" name="rating" value="4"> ☆☆☆☆
+                        </label>
+
+                        <label for="rating3" tabindex="0" aria-label="Rating 3 out of 5">
+                            <input type="radio" id="rating3" name="rating" value="3" checked> ☆☆☆
+                        </label>
+
+                        <label for="rating2" tabindex="0" aria-label="Rating 2 out of 5">
+                            <input type="radio" id="rating2" name="rating" value="2"> ☆☆
+                        </label>
+
+                        <label for="rating1" tabindex="0" aria-label="Rating 1 out of 5">
+                            <input type="radio" id="rating1" name="rating" value="1"> ☆
+                        </label>
+                    </div>
+
+                    <input type="submit" id="review-submit" aria-label="Review Status" value="Send">
+                    <p id="review-status"></p>
+                </div>
+            </form>
+        </section>
+        <!-- End review form -->
+        <!-- Beginning reviews -->
+        <section id="reviews-container" role="region" tabindex="0" aria-label="regional reviews of restaurant">
+            <ul id="reviews-list" role="list" tabindex="0" aria-label="reviews"></ul>
+        </section>
+        <!-- End reviews -->
+    </main>
+    <!-- End main -->
+
+    <!-- Beginning footer -->
+    <footer id="footer" tabindex="0" role="contentinfo" aria-label="copyright section">
+        Copyright (c) 2018
+        <a href="/" tabindex="0" role="link">
+            <strong>Restaurant Reviews</strong>
+        </a> All Rights Reserved.
+    </footer>
+    <!-- End footer -->
+
+    <!-- Beginning scripts -->
+    <!-- IDB wrapper -->
+    <script defer src="js/idb.js"></script>
+    <!-- Database helpers -->
+    <script defer src="js/dbhelper.js"></script>
+    <!-- Main javascript file -->
+    <script defer src="js/restaurant_info.js"></script>
+    <!-- Google Maps -->
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCJBXJybEeKQ4iOMo_VeCscYh5x1lJfgBw&libraries=places&callback=initMap"></script>
+    <!-- End scripts -->
+
+</body>
+
+</html>
